@@ -1,0 +1,19 @@
+<form #formBox="ngForm">
+    <h2 mat-dialog-title class="textaling">בחר כמות</h2>
+    <mat-dialog-content class="textaling">
+        <p>לחצי או רבע יש להוריד את הכמות עם החץ</p>
+        <input #quantityBox="ngModel" [(ngModel)]="quantity" name="quantity" type="number" step="0.25" min="0.25"
+            max="100">
+        <span *ngIf="quantityBox.touched && quantityBox.errors?.['min']">כמות לא יכולה להיות שלילית </span>
+        <span *ngIf="quantityBox.touched && quantityBox.errors?.['max']">הכמות המקסימלית היא 100 </span>
+    </mat-dialog-content>
+    <mat-dialog-actions  class="textaling">
+        <button mat-dialog-close [mat-dialog-close]="quantityBox.value" [disabled]="formBox.invalid" mat-raised-button
+            class="add-quantity">
+            &nbsp;הוסף</button>
+        <button mat-raised-button mat-dialog-close [mat-dialog-close]="false" class="add-quantity">
+            &nbsp;סגור</button>
+    </mat-dialog-actions>
+</form>
+
+

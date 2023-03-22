@@ -1,0 +1,31 @@
+<div class="header-container">
+  <app-search
+    *ngIf="
+      user &&
+      (router.url === '/shopping' ||
+        router.url === '/order' ||
+        router.url === '/admin-home')
+    "
+  ></app-search>
+
+  <body>
+    <!-- <button (click)="showRep()" *ngIf="user.role === 2">הצג דו''ח פירוט</button> -->
+    <button (click)="showRep()" *ngIf="user.role === '2'" class="button">הצג דוח פירוט</button>
+
+
+    <header>
+      <div class="authMenu">
+        <app-auth-menu></app-auth-menu>
+      </div>
+      <div class="inner">
+        <div class="logo">
+          <div>
+            <app-logo></app-logo>
+          </div>
+        </div>
+      </div>
+      
+    </header>
+
+  </body>
+</div>

@@ -1,0 +1,40 @@
+@import "../../../styles/variables/variables.scss";
+
+div {
+  position: absolute;
+  top: 32px;
+  right: 20px;
+  z-index: 1;
+  right: 907px;
+  left: 570px;
+  bottom: 20px;
+  width: 10%;
+}
+
+.logout-icon {
+  color: $shopping-white;
+  top: 8px;
+  position: relative;
+}
+
+@media only screen and (max-width: 700px) {
+  div {
+    font-size: smaller;
+    right: 14px;
+  }
+
+  span mat-icon {
+    display: none;
+  }
+}
+
+.mat-icon {
+  -webkit-user-select: none;
+  user-select: none;
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 24px;
+  color: black !important;
+  width: 24px;
+}
